@@ -125,7 +125,7 @@
 	}
 
 		#intro input, #intro select, #intro textarea {
-			color: #4169e1;
+			color: #ffffff;
 		}
 
 		#intro a {
@@ -139,12 +139,12 @@
 			}
 
 		#intro strong, #intro b {
-			color: #4169e1;
+			color: #ffffff;
 		}
 
 		#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
-			color: #4169e1;
+			color: #ffffff;
 		}
 
 		#intro blockquote {
