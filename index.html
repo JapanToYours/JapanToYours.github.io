@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div class="">
+      <p>日幣價格</p>
+      <input type="number" name="jpyPrice" value="" id="jpyPrice">
+      <p>日本國內運費</p>
+      <input type="number" name="jpyShipping" value="" id="jpyShipping">
+      <p>日幣匯率</p>
+      <input type="number" name="jpyRate" value="" step="0.001" id="jpyRate">
+      <p>商品公斤數</p>
+      <input type="number" name="weight" value="" id="weight">
+      <p>國際運費每公斤</p>
+      <input type="number" name="shippingRate" value="320" id="shippingRate">
+    </div>
+    <div class="">
+      <input onclick="convert()" type="button" name="" value="換算" id="getPrice">
+    </div>
+    <div class="">
+      <p>報價</p>
+      <p id="sellPrice"></p>
+      <p>成本</p>
+      <p id="ourPrice"></p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
