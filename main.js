@@ -8,6 +8,6 @@ function convert() {
   var shippingRate = Number(document.getElementById("shippingRate").value);
   var fee = Number(document.getElementById("fee").value);
   sellPrice.innerHTML = (jpyPrice + jpyShipping)*(jpyRate+0.06) + weight*shippingRate + fee;
-  ourPrice.innerHTML = (jpyPrice + jpyShipping)*(jpyRate+0.03) + weight*(shippingRate+180);
+  ourPrice.innerHTML = (jpyPrice + jpyShipping)*(jpyRate+0.03) + weight*(shippingRate+80);
   return
 }
