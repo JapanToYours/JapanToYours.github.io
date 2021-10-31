@@ -12,14 +12,16 @@
       <input type="number" name="weight" value="2" id="weight">
       <p>國際運費每公斤</p>
       <input type="number" name="shippingRate" value="320" id="shippingRate">
+      <p>蝦皮運費手續費</p>
+      <input type="number" name="fee" value="200" id="fee">
     </div>
     <div class="">
       <input onclick="convert()" type="button" name="" value="換算" id="getPrice">
     </div>
     <div class="">
-      <p>報價</p>
+      <p>報價 = (商品價格+日本運費)*(匯率+0.06) + 公斤數*國際運費每公斤 + 蝦皮手續費</p>
       <p id="sellPrice"></p>
-      <p>成本</p>
+      <p>成本 = (商品價格+日本運費)*(匯率+0.03) + 公斤數*500</p>
       <p id="ourPrice"></p>
     </div>
     <script src="main.js"></script>
