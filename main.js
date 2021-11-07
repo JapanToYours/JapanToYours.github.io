@@ -8,7 +8,8 @@ function convert() {
   var shippingRate = Number(document.getElementById("shippingRate").value);
   var clothNum = Number(document.getElementById("clothNum").value);
   var fee = Number(document.getElementById("fee").value);
-  sellPrice.innerHTML = (jpyPrice + jpyShipping)*(jpyRate+0.06) + weight*shippingRate + fee + (clothNum-1)*100;
-  ourPrice.innerHTML = (jpyPrice + jpyShipping)*(jpyRate+0.03) + weight*(shippingRate+80);
+  var method = Number(document.getElementById("method").value);
+  sellPrice.innerHTML = ((jpyPrice + jpyShipping)*(jpyRate+0.06) + weight*shippingRate + fee + (clothNum-1)*100)*method;
+  ourPrice.innerHTML = ((jpyPrice + jpyShipping)*(jpyRate+0.03) + weight*(shippingRate+80))*method;
   return
 }
