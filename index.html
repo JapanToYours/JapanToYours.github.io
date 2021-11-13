@@ -19,6 +19,8 @@
       <input type="number" name="clothNum" value="1" id="clothNum">
       <p>蝦皮運費手續費</p>
       <input type="number" name="fee" value="200" id="fee">
+      <p>運費關稅蝦皮</p>
+      <input type="number" name="fee" value="400" id="customerFee">
       <p>購買方式</p>
       <select name="pets" id="method">
         <option value="1" selected>訂金代購(不退)</option>
@@ -34,6 +36,8 @@
       <p id="sellPrice"></p>
       <p>成本 = (商品價格+日本運費)*(匯率+0.03) + 公斤數*400</p>
       <p id="ourPrice"></p>
+      <p>客人公式 = (商品價格+日本運費)*0.31 + 運費關稅蝦皮</p>
+      <p id="customerPrice"></p>
     </div>
     <script src="main.js"></script>
   </body>
