@@ -7,14 +7,14 @@
     <div class="">
       <h4>====物品性質====</h4>
       <p>方式</p>
-      <select name="method" id="method">
+      <select name="method" id="method" onchange="Method()">
         <option value="1" selected id="helpBuy">代購</option>
         <option value="2" id="preBuy">預購</option>
         <option value="3" id="smallItem">小物</option>
         <option value="4" id="inStock">現貨</option>
       </select>
       <div class="">
-        <p id="notice"></p>
+        <p id="notice">代購商品僅尾款(200元上下)走蝦皮<br>其餘先匯款或是刷卡<br>也可先收訂金每一萬日幣收一千台幣起</p>
       </div>
       <p>件數</p>
       <select name="pieces" id="pieces" onchange="Pieces()">
