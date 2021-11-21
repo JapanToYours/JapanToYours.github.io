@@ -5,39 +5,79 @@
   </head>
   <body>
     <div class="">
-      <p>日幣價格</p>
-      <input type="number" name="jpyPrice" value="" id="jpyPrice">
-      <p>日本國內運費</p>
-      <input type="number" name="jpyShipping" value="550" id="jpyShipping">
-      <p>日幣匯率</p>
-      <input type="number" name="jpyRate" value="0.25" step="0.001" id="jpyRate">
-      <p>商品公斤數</p>
-      <input type="number" name="weight" value="1" step="0.1" id="weight">
-      <p>國際運費每公斤</p>
-      <input type="number" name="shippingRate" value="320" id="shippingRate">
+      <h4>====物品性質====</h4>
+      <p>方式</p>
+      <select name="method" id="method">
+        <option value="1" selected id="helpBuy">代購</option>
+        <option value="2" id="preBuy">預購</option>
+        <option value="3" id="smallItem">小物</option>
+        <option value="4" id="inStock">現貨</option>
+      </select>
       <p>件數</p>
-      <input type="number" name="clothNum" value="1" id="clothNum">
-      <p>蝦皮運費手續費</p>
-      <input type="number" name="fee" value="200" id="fee">
-      <p>運費關稅蝦皮</p>
-      <input type="number" name="fee" value="400" id="customerFee">
-      <p>購買方式</p>
-      <select name="pets" id="method">
-        <option value="1" selected>訂金代購(不退)</option>
-        <option value="1.15">全額預購(可退)</option>
+      <select name="pieces" id="pieces" onchange="Pieces()">
+        <option value="1" selected id="1Piece">1</option>
+        <option value="2" id="2Pieces">2</option>
+        <option value="3" id="3Pieces">3</option>
+        <option value="4" id="4Pieces">4</option>
+        <option value="5" id="5Pieces">5</option>
+        <option value="6" id="6Pieces">6</option>
+        <option value="7" id="7Pieces">7</option>
+        <option value="8" id="8Pieces">8</option>
+        <option value="9" id="9Pieces">9</option>
       </select>
     </div>
-    <br>
     <div class="">
-      <input onclick="convert()" type="button" name="" value="換算" id="getPrice">
+      <p id="notice"></p>
     </div>
     <div class="">
-      <p>報價 = (商品價格+日本運費)*(匯率+0.06) + 公斤數*國際運費每公斤 + 蝦皮手續費(基本價200 多一件加100)</p>
-      <p id="sellPrice"></p>
-      <p>成本 = (商品價格+日本運費)*(匯率+0.03) + 公斤數*400</p>
-      <p id="ourPrice"></p>
-      <p>客人公式 = (商品價格+日本運費)*0.31 + 運費關稅蝦皮</p>
-      <p id="customerPrice"></p>
+      <h4>====商品原價====</h4>
+      <div id="prices">
+        <p>日幣價格</p>
+        <input type="number" name="jpyPrice1" value="0" id="jpyPrice1">
+        <input type="hidden" name="jpyPrice2" value="0" id="jpyPrice2">
+        <input type="hidden" name="jpyPrice3" value="0" id="jpyPrice3">
+        <input type="hidden" name="jpyPrice4" value="0" id="jpyPrice4">
+        <input type="hidden" name="jpyPrice5" value="0" id="jpyPrice5">
+        <input type="hidden" name="jpyPrice6" value="0" id="jpyPrice6">
+        <input type="hidden" name="jpyPrice7" value="0" id="jpyPrice7">
+        <input type="hidden" name="jpyPrice8" value="0" id="jpyPrice8">
+        <input type="hidden" name="jpyPrice9" value="0" id="jpyPrice9">
+      </div>
+      <p>日本國內運費</p>
+      <input type="number" name="jpyShipping" value="550" id="jpyShipping">
+      <p>商品公斤數</p>
+      <input type="number" name="weight" value="1" step="0.2" id="weight">
+    </div>
+    <div class="">
+      <h4>====定價相關====</h4>
+      <p>蝦皮賣場價格(或尾款)</p>
+      <input type="number" name="fee" value="200" id="shopee">
+      <p>手續費</p>
+      <input type="number" name="fee" value="200" step="50" id="serviceFee">
+    </div>
+    <div class="">
+      <h4>=====以下非必要不改動=====</h4>
+      <p>國際運費每公斤</p>
+      <input type="number" name="shippingRate" value="320" id="shippingRate">
+      <p>日幣匯率</p>
+      <input type="number" name="jpyRate" value="0.25" step="0.001" id="jpyRate">
+    </div>
+    <br>
+    <br>
+    <div class="">
+      <div class="">
+        <input onclick="Convert()" type="button" name="" value="開始報價" id="getPrice">
+      </div>
+      <h4>====建議售價====</h4>
+      <p>頂價</p>
+      <p id="highestPrice"></p>
+      <p>底價</p>
+      <p id="lowestPrice"></p>
+      <p>報價 = (商品價格+日本運費)*0.31 + 手續費</p>
+      <p id="sellingPrice"></p>
+      <h2>!!驗算用 勿用成本報價!!</h2>
+      <p>成本</p>
+      <p id="cost"></p>
     </div>
     <script src="main.js"></script>
   </body>
