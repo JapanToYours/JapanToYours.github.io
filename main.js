@@ -52,7 +52,7 @@ function Convert() {
       else if (sellingPrice.value > highestPrice.value) {alert("報價高於頂價 可能偏貴 請注意")};
   }
     else if (method == 3) {
-      notice.innerHTML = "小物(200g以下)不單獨易利空運<br>需跟其他商品一起走國際段否則算是代購."
+      notice.innerHTML = "小物(200g以下)不單獨易利空運<br>需跟其他商品一起走國際段否則算是代購"
       highestPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.06)*1.1 + weight*shippingRate + shopee*0.06 + 100 + (pieces-1)*50;
       lowestPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.03)*1.05 + shopee*0.06 + 100 + (pieces-1)*30;
       sellingPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.06) + serviceFee;
