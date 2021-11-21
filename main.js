@@ -29,7 +29,7 @@ function Convert() {
   if (method == 1) {
     if (weight < 1) { weight = 1};
 
-    notice.value = "代購商品僅尾款(200元上下)走蝦皮<br>其餘先匯款或是刷卡<br>也可先收訂金每一萬日幣收一千台幣起"
+    notice.innerHTML = "代購商品僅尾款(200元上下)走蝦皮<br>其餘先匯款或是刷卡<br>也可先收訂金每一萬日幣收一千台幣起"
     highestPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.06) + (weight+0.2)*(shippingRate) + shopee*0.06 + 100 + (pieces-1)*50;
     lowestPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.03) + (weight+0.1)*(shippingRate) + shopee*0.06 + 60 + (pieces-1)*30;
     sellingPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.06) + serviceFee;
@@ -42,7 +42,7 @@ function Convert() {
     else if (method == 2) {
       if (weight < 1) { weight = 1};
 
-      notice.value = "預購商品全額蝦皮<br>記得調整蝦皮賣場價格至全額"
+      notice.innerHTML = "預購商品全額蝦皮<br>記得調整蝦皮賣場價格至全額"
       highestPrice.value = ((jpyPrice + jpyShipping)*(jpyRate+0.06) + (weight+0.2)*(shippingRate))*1.1 + shopee*0.1 + 200;
       lowestPrice.value = ((jpyPrice + jpyShipping)*(jpyRate+0.03) + (weight+0.1)*(shippingRate))*1.05 + shopee*0.1 + 100;
       sellingPrice.value = (jpyPrice + jpyShipping)*(jpyRate+0.06) + serviceFee;
