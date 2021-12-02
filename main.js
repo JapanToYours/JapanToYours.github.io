@@ -18,24 +18,24 @@ function Convert() {
   var jpyRate = Number(document.getElementById("jpyRate").value);
   var weight = Number(document.getElementById("weight").value);
   var shippingRate = Number(document.getElementById("shippingRate").value);
-  var profits = Number(document.getElementById("profits").value);
+  var myPrice = Number(document.getElementById("myPrice").value);
 //outputs
   var highestPrice = document.getElementById("highestPrice");
   var lowestPrice = document.getElementById("lowestPrice");
-  var sellingPrice = document.getElementById("sellingPrice");
+  var profits = document.getElementById("profits");
   var cost = document.getElementById("cost");
 
   if (transportation == "alone") {weight = Math.max(0.9, weight)};
 
-  cost.value = (jpyPrice + jpyShipping)*(jpyRate+0.01)*risk + (weight+0.1)*shippingRate + shopeeTransportationFee;
-  cost.value = cost.value*shopee;
-  sellingPrice.value = cost.value + profits;
-  highestPrice.value = cost.value*1.25;
-  lowestPrice.value = cost.value*1.15;
-  if (sellingPrice.value < lowestPrice.value) {alert("小賠做佛心")}
-  else if (sellingPrice.value > highestPrice.value) {alert("比公式高 只要沒算錯依然可報價")};
+  cost.value = parseInt((jpyPrice + jpyShipping)*(jpyRate+0.01)*risk + (weight+0.1)*shippingRate + shopeeTransportationFee + myPrice*shopee);
+  profits.value = parseInt(myPrice - cost.value);
+  highestPrice.value = parseInt(cost.value*1.25);
+  lowestPrice.value = parseInt(cost.value*1.15);
+  
+  if (profits.value < 0) {alert("賠爆了")}
+  else if (profits.value < lowestPrice.value) {alert("小賠做佛心")};
 
-  sellingPrice.innerHTML = sellingPrice.value;
+  profits.innerHTML = profits.value;
   highestPrice.innerHTML = highestPrice.value;
   lowestPrice.innerHTML = lowestPrice.value;
   cost.innerHTML = cost.value;

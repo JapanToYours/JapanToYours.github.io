@@ -5,29 +5,12 @@
   </head>
   <body>
     <div class="">
-      <p>蝦皮下標價?</p>
-      <select class="" name="shopee" id="shopee" onchange="">
-        <option value="1.05">全額(成本含蝦皮手續費5%)</option>
-        <option value="1">僅尾款200賣場(手續費約20)</option>
-      </select>
-      <p>商品是否單獨運送?</p>
-      <select class="" name="transportation" id="transportation">
-        <option value="alone">單獨運送(320運費起跳)</option>
-        <option value="together">隨其他商品一起出(分攤運費)</option>
-      </select>
-      <p>怕被棄單嗎?</p>
-      <select class="" name="risk" id="risk">
-        <option value="1">我們不害怕我們不擔心</option>
-        <option value="1.1">有點(成本1.1倍)</option>
-        <option value="1.2">怕(成本1.2倍)</option>
-        <option value="1.33">很害怕(成本1.3倍)</option>
-        <option value="1.5">會先進貨賣現貨怕滯銷(成本1.5倍起跳)</option>
-      </select>
-      <p>價格是否含台灣段運費?</p>
-      <select class="" name="shopeeTransportationFee" id="shopeeTransportationFee">
-        <option value="60">含運(多60成本)</option>
-        <option value="0">否</option>
-      </select>
+      <h1>報價賺多少計算機</h1>
+      <p>我想要報的價格</p>
+      <input type="number" name="shopee" value="" step="50" id="myPrice">
+    </div>
+    <div class="">
+      <h4>====來算成本====</h4>
       <p>件數?</p>
       <select name="pieces" id="pieces" onchange="Pieces()">
         <option value="1" selected id="1Piece">1</option>
@@ -56,8 +39,29 @@
       <input type="number" name="jpyShipping" value="550" id="jpyShipping">
       <p>商品重量幾公斤?</p>
       <input type="number" name="weight" value="1" step="0.1" id="weight">
-      <p>希望賺多少?</p>
-      <input type="number" name="shopee" value="200" step="50" id="profits">
+      <p>蝦皮下標價?</p>
+      <select class="" name="shopee" id="shopee" onchange="">
+        <option value="0.05">全額(成本含蝦皮手續費5%)</option>
+        <option value="0">僅尾款200賣場(手續費約20)</option>
+      </select>
+      <p>商品是否單獨運送?</p>
+      <select class="" name="transportation" id="transportation">
+        <option value="alone">單獨運送(320運費起跳)</option>
+        <option value="together">隨其他商品一起出(分攤運費)</option>
+      </select>
+      <p>怕被棄單嗎?</p>
+      <select class="" name="risk" id="risk">
+        <option value="1">我們不害怕我們不擔心</option>
+        <option value="1.1">有點(成本1.1倍)</option>
+        <option value="1.2">怕(成本1.2倍)</option>
+        <option value="1.33">很害怕(成本1.3倍)</option>
+        <option value="1.5">會先進貨賣現貨怕滯銷(成本1.5倍起跳)</option>
+      </select>
+      <p>價格是否含台灣段運費?</p>
+      <select class="" name="shopeeTransportationFee" id="shopeeTransportationFee">
+        <option value="60">含運(多60成本)</option>
+        <option value="0">否</option>
+      </select>
     </div>
     <div class="">
       <h4>=====以下非必要不改動=====</h4>
@@ -72,14 +76,15 @@
       <div class="">
         <input onclick="Convert()" type="button" name="" value="開始報價" id="getPrice">
       </div>
-      <h4>====建議售價====</h4>
-      <p>算出來的報價(根據希望賺多少)</p>
-      <p id="sellingPrice"></p>
-      <p>=============</p>
-      <p>會賺的報價(超過也可以)</p>
+      <h4>====這報價會賺多少====</h4>
+      <p>這單會賺這樣</p>
+      <p id="profits"></p>
+      <p>=====建議定價====</p>
+      <p>這樣定很不錯</p>
       <p id="highestPrice"></p>
-      <p>佛心報價(服務顧客不賺不賠)</p>
+      <p>佛心定價(不賺不賠)</p>
       <p id="lowestPrice"></p>
+      <p>====成本多少====</p>
       <p>成本價(至少會小賠)</p>
       <p id="cost"></p>
     </div>
