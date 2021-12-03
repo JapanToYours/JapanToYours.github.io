@@ -27,7 +27,7 @@ function Convert() {
 
   if (transportation == "alone") {weight = Math.max(0.9, weight)};
 
-  cost.value = parseInt((jpyPrice + jpyShipping)*(jpyRate+0.01)*risk + (weight+0.1)*shippingRate + shopeeTransportationFee + myPrice*shopee);
+  cost.value = parseInt((jpyPrice + jpyShipping)*(jpyRate+0.01)*risk + (weight+0.1)*shippingRate + shopeeTransportationFee + myPrice*shopee)+20;
   profits.value = parseInt(myPrice - cost.value);
   highestPrice.value = parseInt(cost.value*1.25);
   lowestPrice.value = parseInt(cost.value*1.15);
