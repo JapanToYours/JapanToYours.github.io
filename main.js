@@ -31,9 +31,9 @@ function Convert() {
   profits.value = parseInt(myPrice - cost.value);
   highestPrice.value = parseInt(cost.value*1.25);
   lowestPrice.value = parseInt(cost.value*1.15);
-  
+
   if (profits.value < 0) {alert("賠爆了")}
-  else if (profits.value < lowestPrice.value) {alert("小賠做佛心")};
+  else if (profits.value < lowestPrice.value - cost.value) {alert("小賠做佛心")};
 
   profits.innerHTML = profits.value;
   highestPrice.innerHTML = highestPrice.value;
